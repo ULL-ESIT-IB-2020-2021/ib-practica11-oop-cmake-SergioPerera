@@ -26,25 +26,29 @@ DateClass::DateClass(int day, int month, int year, int later_dates_number){
   later_dates_number_ = later_dates_number;
 };
 void DateClass::Print(std::ofstream& archive){
-  archive << day_ << "/" << month_ << "/" << year_ << "/" << later_dates_number_ <<  std::endl;
+  archive << day_ << "/" << month_ << "/" << year_ << std::endl;
 };
 void DateClass::NextDates(std::ofstream& archive){
   for(int i{1}; i <= later_dates_number_; i++){
-    day_  += day_;
+    day_++;
 
     if (day_== 30){
-      month_ += month_;
+      month_++;
       day_ = 1;              //Volvemos al primer día del mes
 
       if(month_ == 12){
-        year_ += year_;
+        year_++;
         month_ = 1;          //Volvemos al primer mes del año
       }
     }
-    archive << day_ << "/" << month_ << "/" << year_ << "/" << std::endl;
+    archive << day_ << "/" << month_ << "/" << year_ << std::endl;
   }
 }
-
+void DateClass::LeapYear(std::ofstream& archive){
+  if(year_ % 4 == 0){
+    archive << "El año " << year_ << " es bisiesto" << std::endl;
+  }
+}
 
 
 
@@ -90,5 +94,9 @@ int main (int argc,char *argv[]){
     exit(EXIT_SUCCESS);
   }
   
-  
+  in_date.Print(archive);
+  in_date.NextDates(archive);
+  in_date.LeapYear(archive);
+  archive.close();
+
 }

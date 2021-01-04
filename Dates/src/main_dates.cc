@@ -2,7 +2,8 @@
 #include <iostream>
 //#include <functions.h>
 #include <string>
-
+#include <fstream>
+#include <cstdlib>
 
 class DateClass {
  private:  
@@ -10,23 +11,31 @@ class DateClass {
   int month_;
   int day_;
   int later_dates_number_;
+  int archive_;
  
  public:
   DateClass(int, int, int, int);
   void Print();
-
+  void NextDates();
+  void LeapYear();
 };
-
 DateClass::DateClass(int day, int month, int year, int later_dates_number){
   day_ = day; 
   month_ = month;
   year_ = year;
   later_dates_number_ = later_dates_number;
 };
-
 void DateClass::Print(){
   std::cout << day_ << "/" << month_ << "/" << year_ << "/" << later_dates_number_ <<  std::endl;
 };
+
+void DateClass::NextDates(){
+  for(int i{1}; i <= later_dates_number_; i++){
+    
+  }
+
+}
+
 
 
 void Usage (int argc, char *argv[]){
@@ -58,10 +67,14 @@ int main (int argc,char *argv[]){
   int month_ {std::stoi(argv[2])};
   int year_ {std::stoi(argv[3])};
   int later_dates_number_ {std::stoi(argv[4])};
+  std::string archive {argv[5]};
 
   DateClass in_date(day_, month_, year_, later_dates_number_);
 
-  in_date.Print();
+  //in_date.Print();
+
+  ofstream archive;
+  
 
   
   

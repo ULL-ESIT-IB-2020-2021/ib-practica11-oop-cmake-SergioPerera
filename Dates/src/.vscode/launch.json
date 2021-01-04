@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": ["23", "02", "2020", "5"],
+            "args": ["23", "02", "2020", "5", "Basurilla.txt"],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],

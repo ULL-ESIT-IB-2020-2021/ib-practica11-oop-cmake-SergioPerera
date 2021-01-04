@@ -1,4 +1,0 @@
-main_dates: main_dates.cc functions_dates.cc
-	g++ -o compiled_dates main_dates.cc functions_dates.cc -I. 
-
-

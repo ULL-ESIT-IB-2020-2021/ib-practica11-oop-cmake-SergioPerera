@@ -1,12 +1,12 @@
 #include <iostream>
-#include <functions.h>
+#include <tools.h>
 
 
 void Usage (int argc, char *argv[]){
   
-  if ( argc == 1 ){
+  if ( argc < 5 ){
 
-    std::cout << argv[0] << ": Falta una fecha como parámetro" << std::endl;
+    std::cout << argv[0] << ": Falta un parámetro" << std::endl;
     std::cout << "Pruebe " << argv[0] << " --help para más información" << std::endl;
 
     exit(EXIT_SUCCESS);

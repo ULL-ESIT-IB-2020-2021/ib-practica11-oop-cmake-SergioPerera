@@ -6,25 +6,22 @@
 
 class DateClass {
  private:  
-   int year_;
-   int month_;
-   int day_;
-   int later_dates_number_;
+  int year_;
+  int month_;
+  int day_;
+  int later_dates_number_;
  
  public:
-   
-    DateClass(int, int, int, int);
-    void Print();
+  DateClass(int, int, int, int);
+  void Print();
 
 };
 
 DateClass::DateClass(int day, int month, int year, int later_dates_number){
-  
   day_ = day; 
   month_ = month;
   year_ = year;
   later_dates_number_ = later_dates_number;
-
 };
 
 void DateClass::Print(){
@@ -61,6 +58,10 @@ int main (int argc,char *argv[]){
   int month_ {std::stoi(argv[2])};
   int year_ {std::stoi(argv[3])};
   int later_dates_number_ {std::stoi(argv[4])};
+
+  DateClass in_date(day_, month_, year_, later_dates_number_);
+
+  in_date.Print();
 
   
   

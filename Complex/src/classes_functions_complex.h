@@ -1,16 +1,17 @@
+#pragma once
 #include <iostream>
 #include <vector>
-#include "main_complex.cc"
-#include <tools.h>
 #include <cstdlib>
-#ifndef COMPLEX_H
-#define COMPLEX_H
+#ifndef CLASSES_FUNCTIONS_COMPLEX_H
+#define CLASSES_FUNCTIONS_COMPLEX_H
+
+void Usage (int argc, char *argv[]);
 
 class ComplexClass {
  private:
-/*std::vector<int> result_;
+  std::vector<int> result_;
   std::vector<int> complex_1_;
-  std::vector<int> complex_2_; */
+  std::vector<int> complex_2_; 
 
  public:
   ComplexClass( std::vector<int>, std::vector<int> );
@@ -18,12 +19,9 @@ class ComplexClass {
   void Sub(std::vector<int>, std::vector<int>);
   void Print(std::vector<int>);
 
-  std::vector<int> result_;
-  std::vector<int> complex_1_;
-  std::vector<int> complex_2_;
-
+  
 };
-ComplexClass::ComplexClass(std::vector<int> complex_1, std::vector<int>complex_2){
+ComplexClass::ComplexClass(std::vector<int> complex_1, std::vector<int> complex_2){
   complex_1_ = complex_1;
   complex_2_ = complex_2;
 };

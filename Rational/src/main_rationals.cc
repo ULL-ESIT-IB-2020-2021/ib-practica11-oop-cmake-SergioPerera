@@ -10,6 +10,8 @@ class Rationals{
   int numerator_2_{};
   int denominator_1_{};
   int denominator_2_{};
+  int result_denominator_{};
+  int result_numerator_{};
 
  public:
   Rationals(int, int, int, int);
@@ -27,11 +29,32 @@ Rationals::Rationals(int numerator_1, int numerator_2,int denominator_1, int den
   denominator_1_ = denominator_1;
   denominator_2_ = denominator_2;
 };
-
+void Rationals::Add(std::ofstream& archive_to_write){
+  result_denominator_ = denominator_1_ * denominator_2_;
+  result_numerator_ = (denominator_1_ * numerator_2_) + (denominator_2_ * numerator_1_);
+};
+void Rationals::Sub(std::ofstream& archive_to_write){
+  result_denominator_ = denominator_1_ * denominator_2_;
+  result_numerator_ = (denominator_1_ * numerator_2_) - (denominator_2_ * numerator_1_);
+}
+void Rationals::Mult(std::ofstream& archive_to_write){
+  result_numerator_ = numerator_1_ * numerator_2_ ;
+  result_denominator_ = denominator_1_ * denominator_2_ ;
+}
+void Rationals::Div(std::ofstream& archive_to_write){       //Aquí se aplica la regla del caramelo en las funciones
+  result_numerator_ = numerator_1_ * denominator_2_ ;
+  result_denominator_ = denominator_2_ * numerator_1_ ;
+}
+void Rationals::Compare(std::ofstream& archive_to_write){
+  if(numerator_1_ / denominator_1_ > numerator_2_ / denominator_2_){
+    std::cout << numerator_1_ << "/" << denominator_1_ << " > " << numerator_2_ << "/" << denominator_2_ << std::endl;
+  }
+}
 
 
 int main(int argc, char *argv[]){
   Usage (argc,argv);
+
   std::string name_archive_to_read{argv[1]};
   std::ifstream archive_to_read;
   archive_to_read.open(name_archive_to_read, std::ios::in);

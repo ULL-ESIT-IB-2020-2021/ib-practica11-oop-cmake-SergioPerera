@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Complex/src/main_complex.cc
+iostream
+-
+vector
+-
+tools.h
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Complex/src/tools.h
+string
+-
+
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Complex/src/tools.cc
+iostream
+-
+vector
+-
+
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Complex/src/tools.h
+iostream
+-
+vector
+-
+cstdlib
+-
+

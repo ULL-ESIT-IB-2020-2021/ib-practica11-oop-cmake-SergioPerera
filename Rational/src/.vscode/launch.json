@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            "args": ["archive_to_read.txt", "lalala.txt" ],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],

@@ -4,52 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include "tools.h"
-class Rationals{
- private:
-  int numerator_1_{};
-  int numerator_2_{};
-  int denominator_1_{};
-  int denominator_2_{};
-  int result_denominator_{};
-  int result_numerator_{};
 
- public:
-  Rationals(int, int, int, int);
-  void Add(std::ofstream& archive_to_write);
-  void Sub(std::ofstream& archive_to_write);
-  void Mult(std::ofstream& archive_to_write);
-  void Div(std::ofstream& archive_to_write);
-  void Compare(std::ofstream& archive_to_write);
-  void Print(std::ofstream& archive_to_write);
-
-};
-Rationals::Rationals(int numerator_1, int numerator_2,int denominator_1, int denominator_2){
-  numerator_1_ = numerator_1;
-  numerator_2_ = numerator_2;
-  denominator_1_ = denominator_1;
-  denominator_2_ = denominator_2;
-};
-void Rationals::Add(std::ofstream& archive_to_write){
-  result_denominator_ = denominator_1_ * denominator_2_;
-  result_numerator_ = (denominator_1_ * numerator_2_) + (denominator_2_ * numerator_1_);
-};
-void Rationals::Sub(std::ofstream& archive_to_write){
-  result_denominator_ = denominator_1_ * denominator_2_;
-  result_numerator_ = (denominator_1_ * numerator_2_) - (denominator_2_ * numerator_1_);
-}
-void Rationals::Mult(std::ofstream& archive_to_write){
-  result_numerator_ = numerator_1_ * numerator_2_ ;
-  result_denominator_ = denominator_1_ * denominator_2_ ;
-}
-void Rationals::Div(std::ofstream& archive_to_write){       //Aquí se aplica la regla del caramelo en las funciones
-  result_numerator_ = numerator_1_ * denominator_2_ ;
-  result_denominator_ = denominator_2_ * numerator_1_ ;
-}
-void Rationals::Compare(std::ofstream& archive_to_write){
-  if(numerator_1_ / denominator_1_ > numerator_2_ / denominator_2_){
-    std::cout << numerator_1_ << "/" << denominator_1_ << " > " << numerator_2_ << "/" << denominator_2_ << std::endl;
-  }
-}
 
 
 int main(int argc, char *argv[]){
@@ -63,7 +18,7 @@ int main(int argc, char *argv[]){
     exit(EXIT_SUCCESS);
   }
 
-  std::string name_archive_to_write {argv[3]};
+  std::string name_archive_to_write {argv[2]};
   std::ofstream archive_to_write;
   archive_to_write.open(name_archive_to_write, std::ios::out);
   if(archive_to_write.fail()){
@@ -81,7 +36,6 @@ int main(int argc, char *argv[]){
   std::string current_number;
 
   while (std::getline(archive_to_read, in_numbers)){     // aquí hacemos que el in_numbers contenga la información de una línea distinta en cada iteración
-    std::cout << in_numbers << "\n";
 
     current_number = in_numbers[0];
     numerator_1 = std::stoi(current_number);
@@ -93,5 +47,13 @@ int main(int argc, char *argv[]){
     current_number = in_numbers[6];
     denominator_2 = std::stoi(current_number);
 
+    Rationals result(numerator_1, numerator_2, denominator_1, denominator_2);
+
+    result.Add(archive_to_write);
+    result.Sub(archive_to_write);
+    result.Mult(archive_to_write);
+    result.Div(archive_to_write);
+    result.Compare(archive_to_write);
   }
+  archive_to_write.close();
 }

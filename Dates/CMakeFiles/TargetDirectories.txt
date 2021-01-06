@@ -1,0 +1,4 @@
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Dates/CMakeFiles/rebuild_cache.dir
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Dates/CMakeFiles/edit_cache.dir
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Dates/CMakeFiles/tools.dir
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Dates/CMakeFiles/compiled_dates.dir

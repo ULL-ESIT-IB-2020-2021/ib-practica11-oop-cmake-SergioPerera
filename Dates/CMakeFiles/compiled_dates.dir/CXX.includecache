@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Dates/src/dates.cc
+iostream
+-
+dates.h
+-
+tools.h
+-
+string
+-
+fstream
+-
+cstdlib
+-
+
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Dates/src/tools.cc
+iostream
+-
+tools.h
+-
+
+src/dates.h
+iostream
+-
+dates.h
+-
+string
+-
+fstream
+-
+cstdlib
+-
+
+src/tools.h
+

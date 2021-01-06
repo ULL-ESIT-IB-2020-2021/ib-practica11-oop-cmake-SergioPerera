@@ -13,6 +13,7 @@ void Usage (int argc, char *argv[]){
   }
 
   std::string kHelpText = "Este programa necesita que se le introduzca una fecha tal que dd/mm/aaaa N fichero_salida.txt";
+
   std::string parameter{argv[1]};
 
   if ( parameter == "--help" ) {

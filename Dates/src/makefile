@@ -1,2 +1,0 @@
-main_dates: dates.cc tools.cc
-	g++ -o compiled_dates dates.cc tools.cc -I.                                                                                                                                                                                                      

@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
-
+#include "tools.h"
 class Rationals{
  private:
   int numerator_1_{};
@@ -29,9 +29,24 @@ Rationals::Rationals(int numerator_1, int numerator_2,int denominator_1, int den
 };
 
 
-int main(){
 
-  std::ifstream file("archive_to_read.txt");
+int main(int argc, char *argv[]){
+  Usage (argc,argv);
+  std::string name_archive_to_read{argv[1]};
+  std::ifstream archive_to_read;
+  archive_to_read.open(name_archive_to_read, std::ios::in);
+  if(archive_to_read.fail()){
+    std::cout << "No se pudo abrir el archivo " << name_archive_to_read << " o no está creado" << std::endl;
+    exit(EXIT_SUCCESS);
+  }
+
+  std::string name_archive_to_write {argv[3]};
+  std::ofstream archive_to_write;
+  archive_to_write.open(name_archive_to_write, std::ios::out);
+  if(archive_to_write.fail()){
+    std::cout << "Error al crear el archivo" << std::endl;
+    exit(EXIT_SUCCESS);
+  }
 
   int numerator_1{};
   int numerator_2{};
@@ -42,43 +57,18 @@ int main(){
   std::string in_numbers;
   std::string current_number;
 
-  while (std::getline(file, in_numbers)){     // aquí hacemos que el in_numbers contenga la información de una línea distinta en cada iteración
+  while (std::getline(archive_to_read, in_numbers)){     // aquí hacemos que el in_numbers contenga la información de una línea distinta en cada iteración
     std::cout << in_numbers << "\n";
 
-    if (in_numbers[0] == negative[0]){               // miramos si el primer racional es negativo 
-      current_number = in_numbers[1];
-      numerator_1 = std::stoi(current_number);
-      current_number = in_numbers[3];
-      denominator_1 = std::stoi(current_number);
-      
-      /*current_number = in_numbers[4];
-      numerator_2 = std::stoi(current_number); 
-      current_number = in_numbers[6];                 // establecemos el segundo racional como positivo
-      denominator_2 = std::stoi(current_number);*/
-    }
-    else if(in_numbers[5] == negative[0]){               // miramos si el segundo racional es negativo y lo cambiamos
-      current_number = in_numbers[7];
-      numerator_2 = std::stoi(current_number);
-      current_number = in_numbers[9];
-      denominator_2 = std::stoi(current_number);
+    current_number = in_numbers[0];
+    numerator_1 = std::stoi(current_number);
+    current_number = in_numbers[2];
+    denominator_1 = std::stoi(current_number);
 
-      current_number = in_numbers[0];
-      numerator_1 = std::stoi(current_number);  
-      current_number = in_numbers[2];               
-      denominator_1 = std::stoi(current_number);
-    }
-    else{
-      current_number = in_numbers[0];
-      numerator_1 = std::stoi(current_number);
-      current_number = in_numbers[2];
-      denominator_1 = std::stoi(current_number);
-
-      current_number = in_numbers[4];
-      numerator_2 = std::stoi(current_number);                   // establecemos el segundo racional como positivo
-      current_number = in_numbers[6];
-      denominator_2 = std::stoi(current_number);
-    }
-
+    current_number = in_numbers[4];
+    numerator_2 = std::stoi(current_number);                   
+    current_number = in_numbers[6];
+    denominator_2 = std::stoi(current_number);
 
   }
 }

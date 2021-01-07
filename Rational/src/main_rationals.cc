@@ -14,6 +14,7 @@ int main(int argc, char *argv[]){
     std::cout << "Pruebe: " << argv[0] << " --help para más información " << std::endl;
     exit(EXIT_SUCCESS);
   }
+  
   Usage (argc, argv);
   
   std::string name_archive_to_read{argv[1]};

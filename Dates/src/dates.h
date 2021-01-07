@@ -29,13 +29,75 @@ void DateClass::Print(std::ofstream& archive){
   archive << day_ << "/" << month_ << "/" << year_ << std::endl;
 };
 void DateClass::NextDates(std::ofstream& archive){
-  for(int i{1}; i <= later_dates_number_; i++){
+  int special_months{32};
+  int i{0};
+  
+  
+  for(int a{i}; a <= later_dates_number_; a++){
+    
     day_++;
-
-    if (day_== 31){
+    if (day_== special_months){
       month_++;
-      day_ = 1;              //Volvemos al primer día del mes
-
+      day_ = 1;    
+      switch(month_){
+        case 1:
+        i = 0;
+        special_months = 31;
+        special_months = special_months +3;
+        break;
+        case 2:
+        i = -1;
+        special_months = 30;
+        special_months = special_months -1;
+        break;
+        case 3:
+        special_months = 30;
+        i = 0;
+        special_months = special_months +2;
+        break;
+        case 4:
+        special_months = 30;
+        i = 0;
+        special_months = special_months + 1;
+        break;
+        case 5:
+        special_months = 30;
+        i = 0;
+        special_months = special_months +2;
+        break;
+        case 6:
+        special_months = 30;
+        i = 0;
+        special_months = special_months + 1;
+        case 7:
+        special_months = 30;
+        i = 0;
+        special_months = special_months +2 ;
+        break;
+        case 8:
+        special_months = 30;
+        i = 0;
+        special_months = special_months +2 ;
+        break;
+        case 9:
+        special_months = 30;
+        i = 0;
+        special_months = special_months + 1;
+        case 10:
+        special_months = 30;
+        i = 0;
+        special_months = special_months +2;
+        break;
+        case 11:
+        special_months = 30;
+        i = 0;
+        special_months = special_months + 1;
+        case 12:
+        special_months = 30;
+        i = 0; 
+        special_months = special_months +2;
+        break;
+      }           
       if(month_ == 13){
         year_++;
         month_ = 1;          //Volvemos al primer mes del año

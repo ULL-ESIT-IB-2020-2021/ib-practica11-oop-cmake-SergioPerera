@@ -1,0 +1,18 @@
+Suma: 7/8 + 8/6 = 106/48
+Resta: 7/8 - 8/6 = -22/48
+Multiplicación: 7/8 * 8/6 = 56/48
+División: 7/8 : 8/6 = 42/64
+Comparación: 7/8 < 8/6
+
+Media de los racionales: 1
+Media de los numeradores de los racionales: 7
+Media de los denominadores de los racionales: 7
+Suma: 9/6 + 8/3 = 75/18
+Resta: 9/6 - 8/3 = -21/18
+Multiplicación: 9/6 * 8/3 = 72/18
+División: 9/6 : 8/3 = 27/48
+Comparación: 9/6 < 8/3
+
+Media de los racionales: 2
+Media de los numeradores de los racionales: 8
+Media de los denominadores de los racionales: 4

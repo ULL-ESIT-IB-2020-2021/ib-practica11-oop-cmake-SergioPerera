@@ -1,0 +1,4 @@
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Class_modification/CMakeFiles/rebuild_cache.dir
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Class_modification/CMakeFiles/edit_cache.dir
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Class_modification/CMakeFiles/tools.dir
+/home/usuario/practicas/ib-practica11-oop-cmake-SergioPerera/Class_modification/CMakeFiles/compiled_rationals.dir

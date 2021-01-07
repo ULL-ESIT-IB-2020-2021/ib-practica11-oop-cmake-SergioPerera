@@ -37,25 +37,25 @@ void Rationals::Add(std::ofstream& archive_to_write){
   result_numerator_ = (denominator_1_ * numerator_2_) + (denominator_2_ * numerator_1_);
 
   archive_to_write << "Suma: " << numerator_1_ << "/" << denominator_1_ << " + " << numerator_2_ << "/" << denominator_2_
-  << " = " << result_numerator_ << "/" << result_numerator_ <<  std::endl;
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
 };
 void Rationals::Sub(std::ofstream& archive_to_write){
   result_denominator_ = denominator_1_ * denominator_2_;
   result_numerator_ = (denominator_1_ * numerator_2_) - (denominator_2_ * numerator_1_);
   archive_to_write << "Resta: " << numerator_1_ << "/" << denominator_1_ << " - " << numerator_2_ << "/" << denominator_2_
-  << " = " << result_numerator_ << "/" << result_numerator_ <<  std::endl;
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
 };
 void Rationals::Mult(std::ofstream& archive_to_write){
   result_numerator_ = numerator_1_ * numerator_2_ ;
   result_denominator_ = denominator_1_ * denominator_2_ ;
   archive_to_write << "Multiplicación: " << numerator_1_ << "/" << denominator_1_ << " * " << numerator_2_ << "/" << denominator_2_
-  << " = " << result_numerator_ << "/" << result_numerator_ <<  std::endl;
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
 };
 void Rationals::Div(std::ofstream& archive_to_write){       //Aquí se aplica la regla del caramelo en las funciones
   result_numerator_ = numerator_1_ * denominator_2_ ;
-  result_denominator_ = denominator_2_ * numerator_1_ ;
+  result_denominator_ = denominator_1_ * numerator_2_ ;
   archive_to_write << "División: " << numerator_1_ << "/" << denominator_1_ << " : " << numerator_2_ << "/" << denominator_2_
-  << " = " << result_numerator_ << "/" << result_numerator_ <<  std::endl;
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
 };
 void Rationals::Compare(std::ofstream& archive_to_write){
   if(numerator_1_ / denominator_1_ > numerator_2_ / denominator_2_){

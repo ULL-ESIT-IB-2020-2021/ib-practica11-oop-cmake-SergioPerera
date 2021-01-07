@@ -1,0 +1,12 @@
+Suma: 1/3 + 7/8 = 29/24
+Resta: 1/3 - 7/8 = 13/24
+Multiplicación: 1/3 * 7/8 = 7/24
+División: 1/3 : 7/8 = 8/21
+Comparación: 1/3 < 7/8
+
+Suma: 7/8 + 7/9 = 119/72
+Resta: 7/8 - 7/9 = -7/72
+Multiplicación: 7/8 * 7/9 = 49/72
+División: 7/8 : 7/9 = 63/56
+Comparación: 7/8 < 7/9
+

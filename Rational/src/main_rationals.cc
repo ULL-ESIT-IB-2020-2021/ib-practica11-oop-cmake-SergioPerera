@@ -4,17 +4,23 @@
 #include <string>
 #include <cstdlib>
 #include "tools.h"
-
+#include <stdexcept>
 
 
 int main(int argc, char *argv[]){
-  Usage (argc,argv);
 
+  if(argv[1] == NULL){                                              //Esto se hace porque si a un string le asignamos un pointer vacío da error std::logic_error
+    std::cout << "Modo de uso: " << argv[0] << " fichero_entrada.txt fichero_salida.txt " << std::endl;
+    std::cout << "Pruebe: " << argv[0] << " --help para más información " << std::endl;
+    exit(EXIT_SUCCESS);
+  }
+  Usage (argc, argv);
+  
   std::string name_archive_to_read{argv[1]};
   std::ifstream archive_to_read;
   archive_to_read.open(name_archive_to_read, std::ios::in);
   if(archive_to_read.fail()){
-    std::cout << "No se pudo abrir el archivo " << name_archive_to_read << " o no está creado" << std::endl;
+    std::cout << "No se pudo abrir el archivo de entrada o no está creado" << std::endl;
     exit(EXIT_SUCCESS);
   }
 

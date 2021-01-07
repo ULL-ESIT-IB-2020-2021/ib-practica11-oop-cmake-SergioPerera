@@ -37,23 +37,37 @@ int main(int argc, char *argv[]){
   int numerator_2{};
   int denominator_1{};
   int denominator_2{};
-
-  std::string negative{"-"};
+  int counter{}, negative_counter{};
+  std::string negative {"-"};
   std::string in_numbers;
   std::string current_number;
 
   while (std::getline(archive_to_read, in_numbers)){     // aquí hacemos que el in_numbers contenga la información de una línea distinta en cada iteración
-
-    current_number = in_numbers[0];
-    numerator_1 = std::stoi(current_number);
-    current_number = in_numbers[2];
-    denominator_1 = std::stoi(current_number);
-
-    current_number = in_numbers[4];
-    numerator_2 = std::stoi(current_number);                   
-    current_number = in_numbers[6];
-    denominator_2 = std::stoi(current_number);
-
+    counter = 0;
+    for(int i{0}; i < in_numbers.length(); i++){
+      if(in_numbers[i] > 47 && in_numbers[i] < 58){
+        counter++;
+        negative_counter++;
+        current_number = in_numbers[i];
+        switch(counter){
+          case 1:
+          numerator_1 = std::stoi(current_number);
+          case 2: 
+          denominator_1 = std::stoi(current_number);
+            if(denominator_1 == 0){
+              std::cout << "No puede haber denominador 0" << std::endl; 
+            }
+          case 3:
+          numerator_2 = std::stoi(current_number);
+          case 4:
+          denominator_2 = std::stoi(current_number);
+            if(denominator_2 == 0){
+              std::cout << "No puede haber denominador 0" << std::endl; 
+            }
+        }
+      }
+    }  
+ 
     Rationals result(numerator_1, numerator_2, denominator_1, denominator_2);
 
     result.Add(archive_to_write);

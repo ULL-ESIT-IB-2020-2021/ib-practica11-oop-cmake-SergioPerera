@@ -41,7 +41,7 @@ void Rationals::Add(std::ofstream& archive_to_write){
 };
 void Rationals::Sub(std::ofstream& archive_to_write){
   result_denominator_ = denominator_1_ * denominator_2_;
-  result_numerator_ = (denominator_1_ * numerator_2_) - (denominator_2_ * numerator_1_);
+  result_numerator_ = (denominator_2_ * numerator_1_) - (denominator_1_ * numerator_2_);
   archive_to_write << "Resta: " << numerator_1_ << "/" << denominator_1_ << " - " << numerator_2_ << "/" << denominator_2_
   << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
 };
